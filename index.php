@@ -6,11 +6,11 @@
  * 3. Déployez sur votre serveur et testez !
  */
 
-$from = '';
-$to = '';
+$from = 'heliosens59@gmail.com';
+$to = 'unsolo@hotmail.fr';
 $message = 'Hello World, sending a simple mail !';
 // TODO Votre code ici.
-
+mail($to, 'test mail', $message);
 
 /**
  * 4. Commentez le code précédent, mais gardez les variables $from et $to
