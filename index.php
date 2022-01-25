@@ -33,4 +33,12 @@ $headers = array(
     'X-Mailer' => 'PHP/' . phpversion()
 );
 
-mail($to, $subject, $message, $headers, $from);
+if(mail($to, $subject, $message, $headers, $from)){
+    echo "Email envoyé avec succès";
+} else {
+    echo "Échec de l'envoi de l'email";
+}
+
+$mailTxt = $message . " to " . $to;
+
+file_put_contents('mails.txt', $mailTxt, FILE_APPEND);
