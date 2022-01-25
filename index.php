@@ -8,9 +8,9 @@
 
 $from = 'heliosens59@gmail.com';
 $to = 'unsolo@hotmail.fr';
-$message = 'Hello World, sending a simple mail !';
+//$message = 'Hello World, sending a simple mail !';
 // TODO Votre code ici.
-mail($to, 'test mail', $message);
+//mail($to, 'test mail', $message);
 
 /**
  * 4. Commentez le code précédent, mais gardez les variables $from et $to
@@ -24,3 +24,13 @@ mail($to, 'test mail', $message);
  *     N'écrasez pas les valeurs déjà existantes ( s'il y en a ).
  */
 // TODO Votre code ici.
+$subject = 'mail à en tête';
+$message = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus nisi magna, non cursus nisi 
+            consequat sed. Mauris ut bibendum tortor. Sed aliquet nibh purus, at tristique risus venenatis sed. ';
+$message = wordwrap($message, 70, "\r\n");
+$headers = array(
+    'reply-To' => 'heliosens59@gmail.com',
+    'X-Mailer' => 'PHP/' . phpversion()
+);
+
+mail($to, $subject, $message, $headers, $from);
